@@ -21,7 +21,7 @@ const ListTasks = ({ tasks, setTasks }) => {
   const statuses = ["todo", "ongoing", "completed"];
 
   return (
-    <div className="flex justify-center items-center gap-16">
+    <div className="flex justify-center gap-16">
       {statuses.map((status, index) => (
         <StatusList 
         key={index} 
