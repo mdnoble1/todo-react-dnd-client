@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
-const CreateTask = ( { tasks, setTasks } ) => {
+    const CreateTask = ( { tasks, setTasks } ) => {
 
 
     // assigning task from the input field 
@@ -16,15 +16,15 @@ const CreateTask = ( { tasks, setTasks } ) => {
     const handleAddTask = (e) => {
         e.preventDefault();
 
-        setTasks( ( previous => {
+        setTasks( (prev) => {
             // setting the task in setTasks array 
-            const list = [ ...previous, task ];
+            const list = [prev?.(...prev), task];
 
             // storing the tasks in local storage 
             localStorage.setItem( "tasks", JSON.stringify(list) );
 
             return list;
-        }))
+        })
     }
 
 

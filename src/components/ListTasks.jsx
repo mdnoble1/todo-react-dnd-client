@@ -1,7 +1,7 @@
 const ListTasks = ( { tasks, setTasks } ) => {
 
 
-    console.log("Task In List", tasks)
+    
 
 
 
