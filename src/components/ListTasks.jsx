@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
+import StatusList from "./StatusList";
 
 const ListTasks = ({tasks, setTasks }) => {
 
@@ -22,11 +23,11 @@ const ListTasks = ({tasks, setTasks }) => {
 
     }, [tasks])
 
-
+    const statuses = [ "todo", "ongoing", "completed" ];
 
     return (
-        <div>
-            <h2>List Tasks</h2> 
+        <div className="flex justify-center items-center gap-16">
+            {statuses.map( (status, index) => <StatusList key={index} status={status}></StatusList>)}
         </div>
     );
 };

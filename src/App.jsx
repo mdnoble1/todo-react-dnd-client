@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast';
 function App() {
   const [tasks, setTasks] = useState([]);
 
-  console.log("Task In App", tasks);
+  // console.log("Task In App", tasks);
 
   useEffect(() => {
 
