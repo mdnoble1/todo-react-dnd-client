@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CreateTask from "./components/CreateTask";
 import ListTasks from "./components/ListTasks";
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -17,6 +18,7 @@ function App() {
     <section className="max-w-screen-2xl mx-auto bg-slate-200 w-full h-screen flex flex-col gap-10 items-center py-20">
       <CreateTask tasks={tasks} setTasks={setTasks}></CreateTask>
       <ListTasks tasks={tasks} setTasks={setTasks}></ListTasks>
+      <Toaster></Toaster>
     </section>
   );
 }
