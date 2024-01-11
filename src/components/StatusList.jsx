@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 
+import { useDrop } from "react-dnd";
 import TaskCard from "./TaskCard";
 
 /* eslint-disable react/prop-types */
@@ -11,6 +12,19 @@ const StatusList = ({
   ongoingTasks,
   completedTasks,
 }) => {
+
+
+
+    // react dnd dropping a card
+  const [{ isOver }, drop] = useDrop(() => ({
+    accept: "task",
+    drop: (item) => addItemToCard(item.id),
+    collect: (monitor) => ({
+      isOver: !!monitor.isOver(),
+    }),
+  }));
+
+
   let text = "to do";
   let bg = "bg-slate-500";
   let tasksToMap = todoTasks;
@@ -27,8 +41,14 @@ const StatusList = ({
     tasksToMap = completedTasks;
   }
 
+
+  const addItemToCard = (id) => {
+    console.log("dropping", id, status)
+  }
+
+
   return (
-    <section>
+    <section ref={drop} className={`rounded-md p-2 ${isOver ? "bg-slate-300" : ""}`}>
       <h2
         className={`font-bold text-xl uppercase ${bg} w-72 h-16 flex items-center justify-center rounded-md`}
       >
