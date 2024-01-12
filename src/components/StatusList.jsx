@@ -2,6 +2,7 @@
 
 import { useDrop } from "react-dnd";
 import TaskCard from "./TaskCard";
+import toast from "react-hot-toast";
 
 /* eslint-disable react/prop-types */
 const StatusList = ({
@@ -55,6 +56,10 @@ const StatusList = ({
 
         return t;
       })
+
+      localStorage.setItem("tasks", JSON.stringify(mTasks));
+
+      toast("Task Status Updated", {icon: "😎"})
 
       return mTasks;
     })
