@@ -14,7 +14,7 @@ const TaskCard = ({ task, tasks, setTasks }) => {
     }),
   }));
 
-  console.log(isDragging);
+  // console.log(isDragging);
 
   const handleRemoveTask = (id) => {
     // console.log(id)

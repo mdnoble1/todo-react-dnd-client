@@ -43,7 +43,21 @@ const StatusList = ({
 
 
   const addItemToCard = (id) => {
-    console.log("dropping", id, status)
+    // console.log("dropping", id, status)
+
+    setTasks((prev) => {
+      // console.log("prev", prev);
+
+      const mTasks = prev.map(t => {
+        if(t.id === id){
+          return {...t, status: status}
+        }
+
+        return t;
+      })
+
+      return mTasks;
+    })
   }
 
 
